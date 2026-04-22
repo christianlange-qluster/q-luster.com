@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/* ─── QLuster "Photon Glow" palette ───────────────────────────────────── */
+@theme {
+  --color-bg: #060B17;
+  --color-surface: #0A1628;
+  --color-surface-2: #0F1B2D;
+  --color-border: #1E2B44;
+  --color-fg: #F5F7FA;
+  --color-muted: #94A3B8;
+  --color-faint: #64748B;
+  --color-cyan: #00D4FF;
+  --color-cyan-soft: #62E6FF;
+  --color-gold: #F4B860;
+  --color-rb-red: #E63946;          /* echoes the Rb D2 line in deck renders */
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+body {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom utility shortcuts */
+@utility heading {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+@utility mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-feature-settings: "ss01", "ss02", "zero";
+}
+
+/* Photon glow background — used on hero */
+@keyframes photon-drift {
+  0%   { transform: translate3d(-2%, -1%, 0) scale(1); }
+  50%  { transform: translate3d(2%, 1%, 0) scale(1.05); }
+  100% { transform: translate3d(-2%, -1%, 0) scale(1); }
+}
+
+@keyframes photon-pulse {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 0.85; }
+}
+
+.photon-orb {
+  animation: photon-drift 18s ease-in-out infinite, photon-pulse 9s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Subtle grid texture overlay */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Mask edges of the grid */
+.mask-fade {
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+}
+
+/* Selection */
+::selection {
+  background: color-mix(in oklab, var(--color-cyan) 35%, transparent);
+  color: var(--color-fg);
+}
+
+/* Smooth scroll anchor offset for sticky nav */
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 80px; }
