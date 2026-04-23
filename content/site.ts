@@ -70,7 +70,6 @@ export const site = {
         heading: "Foundations",
         body:
           "Single-photon detection, cryogenics, and on-chip photonics reach maturity.",
-        current: false,
       },
       {
         period: "2025 – 2026",
@@ -84,14 +83,12 @@ export const site = {
         heading: "Fault Tolerance",
         body:
           "Quantum processors approach fault tolerance; remote entanglement becomes the dominant bottleneck.",
-        current: false,
       },
       {
         period: "2030 +",
         heading: "Quantum Datacenters",
         body:
           "Large-scale quantum datacenters dominate; photonic interconnects become critical infrastructure.",
-        current: false,
       },
     ],
   },
