@@ -25,13 +25,54 @@ export function Product() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeader title={s.title} align="center" />
 
+        {/* Today vs QLuster */}
+        <div className="mt-14 grid md:grid-cols-2 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="rounded-2xl border border-border/60 bg-surface/40 p-7"
+          >
+            <span className="mono text-xs uppercase tracking-[0.2em] text-rb-red/90">
+              {s.problem.title}
+            </span>
+            <p className="mt-3 text-muted leading-relaxed text-pretty">
+              {s.problem.body}
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="relative rounded-2xl border border-cyan/30 bg-cyan/[0.04] p-7 overflow-hidden"
+          >
+            <div
+              aria-hidden
+              className="absolute inset-0 rounded-2xl pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(circle at 80% 0%, rgba(0,212,255,0.08), transparent 60%)",
+              }}
+            />
+            <span className="mono text-xs uppercase tracking-[0.2em] text-cyan-soft">
+              {s.solution.title}
+            </span>
+            <p className="mt-3 text-fg/85 leading-relaxed text-pretty">
+              {s.solution.body}
+            </p>
+          </motion.div>
+        </div>
+
         {/* Linker card: photon source -> quantum network */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mt-14 max-w-3xl mx-auto rounded-2xl border border-cyan/30 bg-cyan/[0.04] p-8 sm:p-10 overflow-hidden"
+          className="relative mt-12 max-w-3xl mx-auto rounded-2xl border border-cyan/30 bg-cyan/[0.04] p-8 sm:p-10 overflow-hidden"
         >
           <div
             aria-hidden

@@ -42,11 +42,21 @@ export const site = {
 
   product: {
     title: "An on-demand photon source for quantum interconnects.",
+    problem: {
+      title: "Today",
+      body:
+        "Current methods for distributing quantum information are slow and low fidelity.",
+    },
+    solution: {
+      title: "QLuster",
+      body:
+        "QLuster engineers single-photon sources for 1000× faster data transfer to unlock quantum technologies.",
+    },
     linker: {
       title:
         "The photon source: the building block of the quantum network.",
       body:
-        "Every quantum link — between processors, across a datacenter, between cities — starts with a single photon. Get the source right and the network follows.",
+        "Every quantum link, between processors, cities, and satellites, starts with a photon source.",
     },
     capabilities: [
       {
@@ -69,7 +79,7 @@ export const site = {
 
   market: {
     title:
-      "A scalable single-photon source is the primary enabler of quantum technologies.",
+      "A scalable single-photon source is a primary enabler of quantum technologies.",
     points: [
       {
         title: "Quantum datacenters",
