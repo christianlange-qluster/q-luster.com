@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/SectionHeader";
+import { BlendImage } from "@/components/BlendImage";
 import { site } from "@/content/site";
 
 export function Market() {
@@ -23,6 +24,16 @@ export function Market() {
 
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeader title={s.title} align="center" />
+
+        <div className="mt-14">
+          <BlendImage
+            src="/images/source-fanout.png"
+            alt="A single QLuster photon source distributing photons across many quantum applications"
+            aspect="aspect-[16/9]"
+            maxWidth="max-w-5xl"
+            sizes="(max-width: 1024px) 95vw, 1024px"
+          />
+        </div>
 
         <div className="mt-14 grid md:grid-cols-3 gap-5">
           {s.points.map((point, i) => (
