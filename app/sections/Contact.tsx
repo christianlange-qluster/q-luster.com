@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SectionHeader } from "@/components/SectionHeader";
 import { site } from "@/content/site";
 
 export function Contact() {
@@ -24,27 +23,28 @@ export function Contact() {
       />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-10 text-center">
-        <SectionHeader eyebrow={s.eyebrow} title={s.title} sub={s.sub} align="center" />
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="heading text-3xl sm:text-4xl lg:text-5xl text-fg leading-[1.1] text-balance"
+        >
+          {s.title}
+        </motion.h2>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-12 flex items-center justify-center"
         >
           <a
             href={`mailto:${c.email}`}
-            className="group inline-flex items-center gap-2 rounded-full bg-cyan px-7 py-3.5 text-sm font-medium text-bg hover:bg-cyan-soft transition-colors"
+            className="inline-flex items-center rounded-full bg-cyan px-8 py-3.5 text-sm font-medium text-bg hover:bg-cyan-soft transition-colors"
           >
-            {c.email}
-            <span className="transition-transform group-hover:translate-x-0.5" aria-hidden>↗</span>
-          </a>
-          <a
-            href={c.phoneHref}
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/40 px-7 py-3.5 text-sm text-fg hover:border-cyan/40 hover:text-cyan-soft transition-colors mono"
-          >
-            {c.phone}
+            {c.ctaLabel}
           </a>
         </motion.div>
       </div>

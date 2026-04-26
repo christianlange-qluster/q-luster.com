@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 type Props = {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   sub?: string;
   align?: "left" | "center";
@@ -18,10 +18,16 @@ export function SectionHeader({ eyebrow, title, sub, align = "left" }: Props) {
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
-        <span className="mono text-xs uppercase tracking-[0.2em] text-cyan">
-          {eyebrow}
-        </span>
-        <h2 className="heading mt-4 text-3xl sm:text-4xl lg:text-5xl text-fg leading-[1.1] text-balance">
+        {eyebrow && (
+          <span className="mono text-xs uppercase tracking-[0.2em] text-cyan">
+            {eyebrow}
+          </span>
+        )}
+        <h2
+          className={`heading text-3xl sm:text-4xl lg:text-5xl text-fg leading-[1.1] text-balance ${
+            eyebrow ? "mt-4" : ""
+          }`}
+        >
           {title}
         </h2>
         {sub && (

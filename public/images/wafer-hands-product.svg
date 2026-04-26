@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Gloved hands holding a silicon wafer">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#0F1B2D"/>
+      <stop offset="100%" stop-color="#060B17"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#00D4FF" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="waferFace" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E2B44"/>
+      <stop offset="50%" stop-color="#2C3E5D"/>
+      <stop offset="100%" stop-color="#0F1B2D"/>
+    </linearGradient>
+    <linearGradient id="waferEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#62E6FF" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="glove" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E2B44"/>
+      <stop offset="100%" stop-color="#0A1628"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bg)"/>
+
+  <!-- Photon glow behind wafer -->
+  <circle cx="400" cy="300" r="280" fill="url(#glow)"/>
+
+  <!-- Subtle grid texture -->
+  <g opacity="0.08" stroke="#94A3B8" stroke-width="0.6">
+    <path d="M0 100 L800 100 M0 200 L800 200 M0 300 L800 300 M0 400 L800 400 M0 500 L800 500"/>
+    <path d="M100 0 L100 600 M200 0 L200 600 M300 0 L300 600 M400 0 L400 600 M500 0 L500 600 M600 0 L600 600 M700 0 L700 600"/>
+  </g>
+
+  <!-- Left glove -->
+  <g>
+    <path d="M 100 600 L 100 470 Q 100 410 160 400 L 280 380 Q 320 374 340 360 L 360 350 L 380 340 L 380 600 Z"
+          fill="url(#glove)" stroke="#62E6FF" stroke-opacity="0.25" stroke-width="1.5"/>
+    <!-- glove cuff highlight -->
+    <path d="M 100 470 Q 100 410 160 400 L 280 380" fill="none" stroke="#00D4FF" stroke-opacity="0.35" stroke-width="2"/>
+    <!-- thumb / fingertip -->
+    <ellipse cx="365" cy="345" rx="22" ry="14" fill="#0F1B2D" stroke="#62E6FF" stroke-opacity="0.4" stroke-width="1.2"/>
+  </g>
+
+  <!-- Right glove (mirror) -->
+  <g>
+    <path d="M 700 600 L 700 470 Q 700 410 640 400 L 520 380 Q 480 374 460 360 L 440 350 L 420 340 L 420 600 Z"
+          fill="url(#glove)" stroke="#62E6FF" stroke-opacity="0.25" stroke-width="1.5"/>
+    <path d="M 700 470 Q 700 410 640 400 L 520 380" fill="none" stroke="#00D4FF" stroke-opacity="0.35" stroke-width="2"/>
+    <ellipse cx="435" cy="345" rx="22" ry="14" fill="#0F1B2D" stroke="#62E6FF" stroke-opacity="0.4" stroke-width="1.2"/>
+  </g>
+
+  <!-- Wafer (tilted disk) -->
+  <g transform="translate(400 320)">
+    <!-- Disk body (ellipse to suggest tilt) -->
+    <ellipse cx="0" cy="0" rx="190" ry="55" fill="url(#waferFace)" stroke="url(#waferEdge)" stroke-width="2"/>
+    <!-- Notch / flat -->
+    <rect x="-10" y="-58" width="20" height="6" fill="#060B17"/>
+    <!-- Concentric rings (lithography pattern) -->
+    <ellipse cx="0" cy="0" rx="160" ry="46" fill="none" stroke="#62E6FF" stroke-opacity="0.18" stroke-width="0.8"/>
+    <ellipse cx="0" cy="0" rx="125" ry="36" fill="none" stroke="#62E6FF" stroke-opacity="0.18" stroke-width="0.8"/>
+    <ellipse cx="0" cy="0" rx="90"  ry="26" fill="none" stroke="#62E6FF" stroke-opacity="0.22" stroke-width="0.8"/>
+    <ellipse cx="0" cy="0" rx="55"  ry="16" fill="none" stroke="#00D4FF" stroke-opacity="0.45" stroke-width="1"/>
+    <!-- Die grid -->
+    <g opacity="0.5" stroke="#62E6FF" stroke-opacity="0.25" stroke-width="0.5">
+      <line x1="-180" y1="0" x2="180" y2="0"/>
+      <line x1="-150" y1="-15" x2="150" y2="-15"/>
+      <line x1="-150" y1="15" x2="150" y2="15"/>
+      <line x1="-100" y1="-30" x2="100" y2="-30"/>
+      <line x1="-100" y1="30" x2="100" y2="30"/>
+      <line x1="0" y1="-50" x2="0" y2="50"/>
+      <line x1="-60" y1="-45" x2="-60" y2="45"/>
+      <line x1="60" y1="-45" x2="60" y2="45"/>
+      <line x1="-120" y1="-35" x2="-120" y2="35"/>
+      <line x1="120" y1="-35" x2="120" y2="35"/>
+    </g>
+    <!-- Photon emission point -->
+    <circle cx="0" cy="0" r="3.5" fill="#F4B860"/>
+    <circle cx="0" cy="0" r="10" fill="none" stroke="#F4B860" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="0" cy="0" r="22" fill="none" stroke="#F4B860" stroke-opacity="0.2" stroke-width="0.6"/>
+  </g>
+
+  <!-- Photon dots scattered -->
+  <g fill="#62E6FF" opacity="0.7">
+    <circle cx="180" cy="170" r="1.6"/>
+    <circle cx="620" cy="200" r="1.4"/>
+    <circle cx="240" cy="120" r="1.2"/>
+    <circle cx="560" cy="100" r="1"/>
+    <circle cx="690" cy="280" r="1.4"/>
+    <circle cx="120" cy="270" r="1.2"/>
+    <circle cx="400" cy="80" r="1.6"/>
+    <circle cx="320" cy="180" r="1"/>
+    <circle cx="500" cy="160" r="1"/>
+  </g>
+
+  <!-- Caption (placeholder marker) -->
+  <text x="400" y="560" text-anchor="middle"
+        font-family="ui-monospace, monospace" font-size="11"
+        fill="#64748B" letter-spacing="3">
+    QLUSTER · CHIP-INTEGRATED PHOTON SOURCE
+  </text>
+</svg>
