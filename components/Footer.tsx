@@ -3,7 +3,7 @@ import { site } from "@/content/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/60 mt-24 py-12">
+    <footer className="border-t border-border/60 py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div className="flex items-center gap-3">
           <Logo className="h-6 w-6 text-cyan/70" />

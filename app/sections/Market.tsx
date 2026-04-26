@@ -29,9 +29,9 @@ export function Market() {
           <BlendImage
             src="/images/source-fanout.png"
             alt="A single QLuster photon source distributing photons across many quantum applications"
-            aspect="aspect-[16/9]"
-            maxWidth="max-w-5xl"
-            sizes="(max-width: 1024px) 95vw, 1024px"
+            aspect="aspect-[5/1]"
+            maxWidth="max-w-6xl"
+            sizes="(max-width: 1024px) 95vw, 1152px"
           />
         </div>
 
@@ -43,7 +43,7 @@ export function Market() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-2xl border border-border/60 bg-surface/40 p-7 hover:border-gold/40 transition-colors"
+              className="rounded-2xl border border-border/60 bg-surface/40 p-6 hover:border-gold/40 transition-colors"
             >
               <div className="mono text-xs uppercase tracking-[0.2em] text-gold">
                 0{i + 1}

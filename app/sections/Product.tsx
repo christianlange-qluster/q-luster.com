@@ -27,7 +27,7 @@ export function Product() {
         <SectionHeader title={s.title} align="center" />
 
         {/* Linker text + visual */}
-        <div className="mt-14 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <div className="mt-14 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -94,7 +94,7 @@ export function Product() {
         </div>
 
         {/* Capability details */}
-        <div className="mt-16 grid sm:grid-cols-3 gap-3">
+        <div className="mt-16 grid sm:grid-cols-3 gap-4">
           {s.capabilities.map((cap, i) => (
             <motion.div
               key={cap.title}
@@ -102,11 +102,9 @@ export function Product() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-xl border border-border/60 bg-surface-2/60 p-5 hover:border-cyan/40 transition-colors"
+              className="rounded-xl border border-border/60 bg-surface-2/60 p-6 hover:border-cyan/40 transition-colors"
             >
-              <div className="mono text-[0.65rem] uppercase tracking-[0.2em] text-cyan">
-                {cap.title}
-              </div>
+              <h3 className="heading text-base text-fg">{cap.title}</h3>
               <p className="mt-2 text-sm text-fg/85 leading-relaxed text-pretty">
                 {cap.body}
               </p>

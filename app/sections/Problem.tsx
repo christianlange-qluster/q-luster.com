@@ -12,7 +12,7 @@ export function Problem() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeader title={s.title} align="center" />
 
-        <div className="mt-14 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <div className="mt-14 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           {/* Body copy */}
           <div className="space-y-5 max-w-xl mx-auto lg:mx-0">
             {s.body.map((p, i) => (

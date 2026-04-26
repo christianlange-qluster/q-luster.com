@@ -23,7 +23,7 @@ export function Nav() {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 min-h-16 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
+      <nav className="mx-auto max-w-7xl px-6 lg:px-10 min-h-16 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
         <Link href="#top" className="flex items-center gap-2.5 group shrink-0">
           <Logo className="h-7 w-7 text-cyan transition-colors group-hover:text-cyan-soft" />
           <span className="heading text-fg text-lg tracking-tight">QLuster</span>
