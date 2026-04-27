@@ -27,6 +27,10 @@ type Props = {
  *  - mask-image radial-gradient feathers the outer edges so the bounding box
  *    isn't visible even when the image has bright pixels near the corners.
  *  - A subtle contrast/saturation bump compensates for the screen-blend wash.
+ *  - The wrapper carries its OWN bg-bg fill so the screen blend has a known
+ *    opaque backdrop even while the framer-motion fade-in animation creates a
+ *    stacking context on the wrapper (which would otherwise isolate the blend
+ *    from the page bg and briefly render the black backdrop opaque).
  *
  * Result: the asset reads as a glowing render that lives natively on the page,
  * not a pasted-in black rectangle.
@@ -62,7 +66,7 @@ export function BlendImage({
   return (
     <Wrapper
       {...wrapperProps}
-      className={`relative ${aspect} ${maxWidth} mx-auto w-full ${className}`}
+      className={`relative bg-bg ${aspect} ${maxWidth} mx-auto w-full ${className}`}
     >
       <Image
         src={src}

@@ -28,7 +28,7 @@ export const site = {
     sub:
       "Atom-compatible, chip-integrated single-photon emitters for quantum networking and distributed quantum computing.",
     primaryCta: { label: "Get in touch", href: "#contact" },
-    secondaryCta: { label: "See the product", href: "#product" },
+    secondaryCta: { label: "See the breakthrough", href: "#product" },
   },
 
   problem: {
