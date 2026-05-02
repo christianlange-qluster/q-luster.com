@@ -27,24 +27,29 @@ export const metadata: Metadata = {
     template: "%s · QLuster Photonics",
   },
   description:
-    "Atom-compatible, chip-integrated single-photon emitters — the missing interconnect for scalable quantum networks.",
+    "QLuster Photonics builds atom-compatible, chip-integrated single-photon emitters — the quantum photonics platform for scalable quantum networks and distributed quantum computing.",
   keywords: [
+    "QLuster Photonics",
+    "Q-luster Photonics",
+    "QLuster",
+    "Q-luster",
+    "quantum photonics",
     "quantum networking",
-    "single photon source",
     "quantum interconnect",
+    "single photon source",
     "neutral atom quantum computing",
-    "rubidium",
+    "rubidium D2",
     "nanophotonics",
     "quantum computing",
-    "QLuster",
   ],
+  alternates: { canonical: "https://q-luster.com" },
   authors: [{ name: "QLuster Photonics" }],
   openGraph: {
     type: "website",
     url: "https://q-luster.com",
     title: "QLuster Photonics — The Photon Source for the Quantum Age",
     description:
-      "Atom-compatible, chip-integrated single-photon emitters — the missing interconnect for scalable quantum networks.",
+      "QLuster Photonics builds atom-compatible, chip-integrated single-photon emitters — the quantum photonics platform for scalable quantum networks.",
     siteName: "QLuster Photonics",
     images: [
       {
@@ -59,10 +64,42 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "QLuster Photonics — The Photon Source for the Quantum Age",
     description:
-      "Atom-compatible, chip-integrated single-photon emitters for scalable quantum networks.",
+      "QLuster Photonics: atom-compatible, chip-integrated single-photon emitters for scalable quantum networks.",
     images: ["/images/source-between-processors.png"],
   },
   robots: { index: true, follow: true },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "QLuster Photonics",
+  alternateName: ["Q-luster Photonics", "QLuster", "Q-luster"],
+  url: "https://q-luster.com",
+  logo: "https://q-luster.com/images/source-between-processors.png",
+  description:
+    "QLuster Photonics builds atom-compatible, chip-integrated single-photon emitters — the quantum photonics platform for scalable quantum networks and distributed quantum computing.",
+  email: "Christian.Lange@q-luster.com",
+  founder: [
+    {
+      "@type": "Person",
+      name: "Dr. Christian M. Lange",
+      jobTitle: "Founder & CEO",
+    },
+    {
+      "@type": "Person",
+      name: "Dr. Jonathan D. Hood",
+      jobTitle: "Founder & CTO",
+    },
+  ],
+  knowsAbout: [
+    "Quantum networking",
+    "Quantum photonics",
+    "Single-photon sources",
+    "Neutral-atom quantum computing",
+    "Nanophotonics",
+    "Quantum interconnects",
+  ],
 };
 
 export default function RootLayout({
@@ -73,7 +110,13 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-bg text-fg">{children}</body>
+      <body className="min-h-full flex flex-col bg-bg text-fg">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
