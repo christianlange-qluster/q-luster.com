@@ -68,6 +68,7 @@ export const metadata: Metadata = {
     images: ["/images/source-between-processors.png"],
   },
   robots: { index: true, follow: true },
+  verification: { google: "v6pRosDLQHrSO8GYkkBn29sjw5PLOBd8u2D8cEL3djM" },
 };
 
 const organizationJsonLd = {
