@@ -105,7 +105,7 @@ export const site = {
       {
         name: "Dr. Christian M. Lange",
         title: "Founder & CEO",
-        image: "/images/christian.png",
+        image: "/images/christian.jpg",
         bio:
           "Expert in solid-state photon emitters and nanophotonics. Received a PhD in Physics from Purdue University.",
       },
